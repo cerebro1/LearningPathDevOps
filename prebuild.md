@@ -2,6 +2,11 @@
 
  [The Roadmap to Becoming a DevOps Professional — From Server to Serverless](https://medium.com/faun/the-roadmap-to-become-a-devops-dude-from-server-to-serverless-dd97420f640e)
 
+Text Editor : [Vim](https://www.linux.com/tutorials/vim-101-beginners-guide-vim/)  
+This is just a beginner's guide for vim. Serves required purpose. One can learn more about vim from vimtutor in depth.
+
+``` $vimtutor```
+
 Here is the index/steps i have formed gist from above roadmap:
 
 1. Python
