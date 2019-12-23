@@ -21,3 +21,4 @@ Here is the index/steps i have formed gist from above roadmap:
 10. CM using Chef
 11. Monitoring using icinga and prometheus using ELK stack
 12. Django
+13. Cloud platform AWS using Terraform
