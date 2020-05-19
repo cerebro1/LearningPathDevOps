@@ -2,19 +2,15 @@
 
  [The Roadmap to Becoming a DevOps Professional — From Server to Serverless](https://medium.com/faun/the-roadmap-to-become-a-devops-dude-from-server-to-serverless-dd97420f640e)
 
-Text Editor : [Vim](https://www.linux.com/tutorials/vim-101-beginners-guide-vim/)  
-This is just a beginner's guide for vim. Serves required purpose. One can learn more about vim from vimtutor in depth.
+Here is the index/steps ( reference from above roadmap ) :
 
-``` $vimtutor```
-
-Here is the index/steps i have formed gist from above roadmap:
-
-1. Python
+0. Tmux + Vim
+1. Git
 2. Linux
 3. Networking
 4. Bash
-5. Nginx
-6. Git
+5. Nginx/Apache
+6. Python
 7. Debian package building
 8. CI
 9. CD
@@ -22,3 +18,4 @@ Here is the index/steps i have formed gist from above roadmap:
 11. Monitoring using icinga and prometheus using ELK stack
 12. Django
 13. Cloud platform AWS using Terraform
+14. Kubernetes
