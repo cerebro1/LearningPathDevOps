@@ -1,0 +1,6 @@
+- You will not be expert by the end but you will in possession of knowledge and skills required to kickstart the linux based DevOps journey
+- I am Sonali Srivastava and i am a linuholic. I live and breath linux. You can checkout the long list of commits in my git repo on my personal projects.
+- Other than that i have spent significant time in industry working under pressure environment of server configuration & maintenance, code integration and deployment, monitoring and automation.
+- So i know the reality and you are not with someone who has heads in cloud.
+- It will not be a dead presentation session instead you will see and perform execution
+- In this fast moving world of tech if you snooze, you loose. So you need to get your hand dirty and play
