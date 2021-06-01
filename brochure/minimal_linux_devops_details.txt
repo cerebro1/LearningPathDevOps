@@ -1,0 +1,167 @@
+Session 1 
+---------
+
+.----------------------------.
+|           login            |
+|----------------------------|
+| login - local              |
+| login - remote (using ssh) |
+| change password            |
+| logout                     |
+'----------------------------'
+.-------------------------. .----------------------------------. .---------------------------------------------.
+|         gtypist         | |               vim                | |                    bash                     |
+|-------------------------| |----------------------------------| |---------------------------------------------|
+| why:                    | | vimtutor - most basic usage      | | interact with operating system              |
+| 1. save time            | | why:                             | | command syntax = name + options + arguments |
+| 2. save wrists from RSI | | 1. learn one good text editor    | | environment variables                       |
+'-------------------------' | 2. versatile                     | | shell builtins, external commands           |
+                            | 3. good for slow remote sessions | | type command                                |
+                            '----------------------------------' | PATH, PS1 and PS2 variables                 |
+                                                                 '---------------------------------------------'
+
+.------------------------.  .----------------------------------.
+|          bash          |  |               git                |
+|------------------------|  |----------------------------------|
+| filesystem commands    |  | clone                            |
+| ls, touch, pwd, mkdir, |  | config user.name                 |
+| cd, rmdir, rm          |  | config user.email                |
+| diff, patch            |  | diff, add, diff --cached, commit |
+'------------------------'  | push                             |
+                            '----------------------------------'
+.-----------------------. .---------------------------------.  .--------------------.  .--------------.
+|         bash          | |         bash scripting          |  | Command scheduling |  |  find help   |
+|-----------------------| |---------------------------------|  |--------------------|  |--------------|
+| pipes and redirection | | echo "Hello world"              |  | crontab -l         |  | man          |
+| processes             | | echo "hello $USER"              |  | crontab -e         |  | man man      |
+| ps, top               | | echo 'hello $USER' > ~/hello.sh |  | at                 |  | man -k topic |
+| free                  | | chmod +x ~/hello.sh             |  '--------------------'  '--------------'
+'-----------------------' '---------------------------------'
+
+
+Session 2
+---------
+
+.----------------------------------------.  .-------------------------------------.
+|                Storage                 |  |               Storage               |
+|----------------------------------------|  |-------------------------------------|
+| Physical layout:                       |  | logical layout (simplified UFS):    |
+| Disk, partitioning schemes, partitions |  | directories, regular files          |
+| File systems:                          |  | Filesystem Hierarchy Standard (FHS) |
+| types, mkfs                            |  | type of files                       |
+| master block, inodes, data blocks      |  | stat, file, ls -lhida commands      |
+| inodes bitmap, data block bit maps     |  | df and du                           |
+| inode structure                        |  '-------------------------------------'
+'----------------------------------------'
+
+.--------------------------------------. .---------------------. .------------------------.
+|       Name service information       | |  Finding files and  | |    Users and groups    |
+|--------------------------------------| |     processing      | |------------------------|
+| categories:                          | |---------------------| | whoami, w, last        |
+| passwd, shadow, groups, hosts        | | find, grep          | | add, modify and delete |
+| protocols, services                  | | regular expressions | | chown, sudo            |
+|                                      | | sort, uniq, tr      | '------------------------'
+| /etc/nsswitch.conf                   | | sed, awk intro      |
+|                                      | |                     |
+| category databases:                  | | tar and gzip        |
+| /etc/{passwd,shadow,group,hosts,...} | '---------------------'
+|                                      |
+| $ getent passwd                      |
+| $ id [user]                          |
+'--------------------------------------'
+
+.----------------------------------------------. .--------------------------------------------.
+|           Domain name system (DNS)           | |                  TCP/ IP                   |
+|----------------------------------------------| |--------------------------------------------|
+| stub resolver, recursive and auth. servers   | | IP address:                                |
+| primary and slave name servers               | | Class A, B, C, Private addresses           |
+| DNS record types: NS, A, CNAME, MX, TXT, SOA | | TCP ports:                                 |
+| FQDN                                         | | SSH, HTTP, SMTP, IMAP, POP                 |
+| tools: hostname, host, dig                   | | commands: ip, ping, curl, wget, telnet, nc |
+'----------------------------------------------' | Routing: traceroute, mtr                   |
+                                                 '--------------------------------------------'
+
+
+Session 3
+---------
+
+.-----------------------.  .----------------------------------.
+|    system startup     |  |        package management        |
+|-----------------------|  |----------------------------------|
+| MBR, GPT              |  | apt/ apt-get update, add, remove |
+| grub, initrd, ramdisk |  | dpkg                             |
+| initd and systemd     |  | apt-cache                        |
+| systemctl             |  | /etc/apt/sources.list            |
+'-----------------------'  '----------------------------------'
+
+.----------------------------------------------. .------------------------------.
+|         Inter process communication          | |      System programming      |
+|----------------------------------------------| |------------------------------|
+| signal,                                      | | Hello world in C             |
+| semaphores, shared memory and message queues | | variable, array              |
+|                                              | | operators, conditionals      |
+| pipes, named-pipes (fifo)                    | | iterations, finctions        |
+| sockets                                      | | pointers                     |
+'----------------------------------------------' | libraries, opt/ arg handling |
+                                                 '------------------------------'
+
+ .--------------------------------------.        .------------------------------.
+ |                RDBMS                 |        |            Python            |
+ |--------------------------------------|        |------------------------------|
+ | SQLite3                              |        | hello world                  |
+ | DDL: table, view, trigger, functions |        | var, array, maps             |
+ | DML: select, insert, update, delete  |        | operators, conditionals      |
+ |     where, order by, group by        |        | iterations, functions        |
+ '--------------------------------------'        |                              |
+                                                 | libraries, opt/ arg handling |
+                                                 | accessing RDBMS              |
+                                                 '------------------------------'
+ .------------------------------------------------------.   .-----------------.
+ |                    Virtualization                    |   |   Networking    |
+ |------------------------------------------------------|   |-----------------|
+ | Docker (image and containers), dockerhub, dockerfile |   | iptables, route |
+ | dockerfile: RUN, CMD, Entrypoint, Volumes, expose    |   | 3-way handshake |
+ | docker compose                                       |   | ssl/ https      |
+ '------------------------------------------------------'   '-----------------'
+
+
+
+Session 4
+---------
+
+ .----------------------------. .-------------------------------------------------.
+ |        Build and CI        | |            Configuration management             |
+ |----------------------------| |-------------------------------------------------|
+ | Jenkins, master and slave  | | Ansible:                                        |
+ | jobs, folders, pipelines,  | | user, package, application, network, monitoring |
+ '----------------------------' '-------------------------------------------------'
+
+ .-------------------.   .----------------------------------------.
+ |    Monitoring     |   |    Memory Cache and Message queues     |
+ |-------------------|   |----------------------------------------|
+ | Metrics           |   | Redis, Memcache, RabbitMQ introduction |
+ | Services          |   '----------------------------------------'
+ | Performance       |
+ | SLA/ SLO          |
+ | Nagios/ Icinga    |
+ '-------------------'
+
+ .-------------------------------------------------.
+ |                 Cloud computing                 |
+ |-------------------------------------------------|
+ | AWS cloud, Google Cloud, terraform introduction |
+ '-------------------------------------------------'
+
+ .-----------------------------------.
+ |           Documentation           |
+ |-----------------------------------|
+ | asciio (block diagrams)           |
+ | LaTeX (publication documentation) |
+ | roff (man pages)                  |
+ '-----------------------------------'
+
+
+
+
+
+
