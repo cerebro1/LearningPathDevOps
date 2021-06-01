@@ -1,0 +1,101 @@
+-> ## USER MANAGEMENT
+-> ## ...............
+
+^
+
+-> *Local Linux users and groups management*
+
+
+
+
+---
+
+-> ## USER <-
+-> ## ....
+
+-> In Linux and Unix like systems,
+
+-> User determines the control on * process, files and directories *
+
+-> User is required for local and remote login.
+
+---
+
+-> ## Logged-in user
+-> ## ..............
+
+^
+
+-> Command : * id *
+
+^
+
+-> Command : * id <username> *
+
+^
+
+-> what is UID ?
+
+^
+
+-> what is GID ?
+
+---
+
+-> ## Change password of user
+-> ## .......................
+
+^
+
+-> Command : * passwd *
+
+^
+
+-> Command : * passwd <username> *
+
+---
+
+-> ## User control over files
+-> ## .......................
+
+^
+
+-> Command : * ls *
+
+---
+
+-> ## User control over process
+-> ## .........................
+
+^
+
+-> A process is owned by user
+
+^
+
+-> Access of process to other files or resources is decided by user
+
+^
+
+-> Command : * ps -u *
+
+---
+
+-> ## Create a user in Linux system
+-> ## .............................
+
+^
+
+-> Command : * adduser *
+
+^
+
+-> what are the files that are touched when adduser command is run?
+
+^
+
+->
+
+---
+
+
