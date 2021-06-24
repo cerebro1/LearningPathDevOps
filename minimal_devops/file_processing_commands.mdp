@@ -1,0 +1,303 @@
+%title: File Processing Commands
+%author: ©2020 DataDewins
+%date: 2020-08-18
+
+-> # ** Processing Files **
+
+-> Let's understand this with an example :
+
+<br>
+
+-> Usecase : Create a directory and keep your notes per session in it.
+
+-> Actions that can be performed :
+
+<br>
+
+- create
+
+<br>
+
+- edit
+
+<br>
+
+- redirect
+
+<br>
+
+- view
+
+---
+
+-> * Create a directory *
+
+$mkdir <file name>
+
+<br>
+
+-> * Change working directory *
+
+$cd <directory name>
+
+---
+
+-> * Create a regular file *
+
+$touch <filename>
+
+<br>
+
+-> * View the contents of file *
+
+$less <filename>
+
+<br>
+
+$cat <filename>
+
+---
+
+-> * View last n lines of file *
+
+$ tail -n <filename>
+
+<br>
+
+-> * View first n lines of file *
+
+$ head -n <filename>
+
+<br>
+
+* Default value of n is 10 if no option is passed
+
+---
+
+-> * Let's implement the usecase *
+
+<br>
+
+'''
+
+$mkdir datadeiwns_notes
+$touch session1.txt
+$vim session1.txt
+
+or for GUI based editor
+
+$gedit session1.txt
+
+'''
+
+---
+
+-> # Let's take another example 
+
+<br>
+
+-> * List the files in / with long listing*
+
+$ls -l /
+
+<br>
+
+-> * Redirect the above command output to a new file
+
+$ls -l / > test.txt
+
+<br>
+
+-> * Display the line that has 'dev' word/text in the file created in above step
+
+$grep 'dev' test.txt
+
+---
+
+-> * Copy the file to different directory *
+
+$cp text.txt /home/sj/
+
+<br>
+
+-> * Change directory to above mentioned directory*
+
+$cd /home/sj
+
+<br>
+
+-> * Append text to the copied file *
+
+$echo "Hello, i am updating the file" >> test.txt
+
+<br>
+
+-> * Count the number of lines in a file *
+
+$wc -l test.txt
+
+---
+
+-> * Count the number of lines in an output *
+
+$tail test.txt | wc -l
+
+<br>
+
+- The output of the first command becomes the input for the second command when pipe is used.
+
+<br>
+
+-> * Find the file named test.txt if exits in / *
+
+$find / -name test.txt
+
+<br>
+
+-> * Run the above command but do not show errors *
+
+$find / -name test.txt 2>/dev/null
+
+<br>
+
+- Please do not suppress errors unless you are sure the particular error can be neglected.
+
+---
+
+-> # ** sed **
+
+- stream editor
+
+- read text line by line into a buffer
+
+- apply intended action
+
+- supports regular expression
+
+- Format :
+
+```
+sed [options] <filename>
+
+```
+
+---
+
+-> # The s command and options
+
+```
+s/regexp/replacement/[flags]
+
+- (substitute) Match the regular-expression against the content of the pattern space. 
+
+- If found, replace matched string with replacement.
+```
+
+-> Other Options:
+
+- g : global
+
+- p : print
+
+- d : delete
+
+---
+
+-> * Echo a text 'Wel Tour' and replace Wel with Welcome *
+
+$echo 'Wel Tour' | sed s/Wel/Welcome/
+
+
+-> * View file test.txt for reference *
+
+$cat test.txt
+
+-> * Replace text root with tree *
+
+$sed s/root/tree/ test.txt
+
+<br>
+
+- Please note this changes the first occurence of the word in each line
+
+- The original file is still the same. The changes were made in the buffer and displayed as output.
+
+- Without option i, sed behaves like p : print new pattern space
+
+---
+
+-> * Replace the text root with tree of complete file in display*
+
+$sed s/root/tree/g test.txt
+
+-> * Update the file test.txt with above changes
+
+$sed -i s/root/tree/g test.txt
+
+- i : in-place editor
+
+-> * Print all the lines of file until a line starting with specific text(example:l) is found *
+
+$sed '/^l/q' test.txt
+
+- ^ denotes starting with
+- q denotes exit without processing any more commands or input
+
+---
+
+-> # ** awk **
+
+<br>
+
+- search files for specific patterns
+
+- reads input file till the end of file
+
+
+- Format
+
+```
+
+awk 'pattern { action }'
+
+
+```
+
+---
+
+-> * Print Hello World using awk
+
+$awk 'BEGIN { print "Hello World" }'
+
+<br>
+
+- pattern : BEGIN - awk executes statements associated with BEGIN before reading any input. 
+
+- action : print command prints the text mentioned.
+
+---
+
+-> Indexing
+
+NR : Current count of input records. Number of rows in a file.
+
+NF : Current count of input fields. Number of colums in a file
+
+FS : Field seperator character stored in this. Default is white space.
+
+---
+
+-> * Print the first word of input text "Hello World" *
+
+$echo " Hello World " | awk '{print $1}'
+
+-> * Print line 4 to 10 from test.txt *
+
+$awk 'NR==4, NR==10 {print $0}' test.txt
+
+-> * Print username from /etc/passwd *
+
+$awk -F ":" '{print $1}' /etc/passwd
+
+
+
